@@ -377,9 +377,12 @@ nav .logo {
 
     
 for (let i = 1; i <= 536; i++) {
-  plotsData.push({ id: i, sold: i % 3 === 0 }); // every 3rd plot is sold
+  plotsData.push({
+    id: i,
+    sold: Math.random() < 0.4, // ~40% chance it’s sold
+    note: ""
+  });
 }
-
     const modal = document.getElementById("plotModal");
     const modalTitle = document.getElementById("modalTitle");
     const modalNote = document.getElementById("modalNote");
